@@ -169,20 +169,21 @@ export default function Books() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {/* Updated grid: 2 cols on mobile, 3 on tablet, 4 on desktop */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
             {otherBooks.map((book, i) => (
               <div
                 key={book.id}
                 className="group animate-fade-up"
-                style={{ animationDelay: `${i * 0.1}s` }}
+                style={{ animationDelay: `${i * 0.05}s` }}
               >
                 <div
                   className="bg-[#101812]/60 backdrop-blur-sm border border-[#C89B3C]/10 hover:border-[#C89B3C]/30 transition-all duration-500 h-full flex flex-col overflow-hidden cursor-pointer hover-lift rounded-xl"
                   onClick={() => setSelectedBook(book)}
                 >
                   {/* Cover Area */}
-                  <div className="p-6 flex items-center justify-center bg-gradient-to-b from-[#090A0F] via-[#090A0F]/80 to-transparent relative min-h-[280px]">
-                    <div className="relative w-40 h-56 rounded-lg overflow-hidden shadow-xl group-hover:scale-105 transition-transform duration-500 border border-[#C89B3C]/10">
+                  <div className="p-4 flex items-center justify-center bg-gradient-to-b from-[#090A0F] via-[#090A0F]/80 to-transparent relative min-h-[240px]">
+                    <div className="relative w-32 h-48 rounded-lg overflow-hidden shadow-xl group-hover:scale-105 transition-transform duration-500 border border-[#C89B3C]/10">
                       <img
                         src={book.coverImage}
                         alt={book.title}
@@ -201,7 +202,7 @@ export default function Books() {
                         style={{ display: "none" }}
                       >
                         <div className="text-center">
-                          <span className="text-3xl font-cinzel text-gold-gradient font-bold">
+                          <span className="text-2xl font-cinzel text-gold-gradient font-bold">
                             WB
                           </span>
                           <div className="w-6 h-[1px] bg-[#C89B3C]/30 mx-auto mt-2"></div>
@@ -212,32 +213,32 @@ export default function Books() {
                   </div>
 
                   {/* Content */}
-                  <div className="p-6 flex-1 flex flex-col">
-                    <h3 className="text-lg font-cinzel text-[#D1C8A3] mb-1 group-hover:text-[#C89B3C] transition-colors duration-300 font-bold line-clamp-1">
+                  <div className="p-4 flex-1 flex flex-col">
+                    <h3 className="text-base font-cinzel text-[#D1C8A3] mb-1 group-hover:text-[#C89B3C] transition-colors duration-300 font-bold line-clamp-1">
                       {book.title}
                     </h3>
                     {book.subtitle && (
-                      <p className="text-[#C89B3C]/60 text-[10px] font-cormorant italic tracking-wider uppercase mb-2 line-clamp-1">
+                      <p className="text-[#C89B3C]/60 text-[9px] font-cormorant italic tracking-wider uppercase mb-2 line-clamp-1">
                         {book.subtitle}
                       </p>
                     )}
-                    <p className="text-[#8A7E5E] text-xs font-lora leading-relaxed mb-4 flex-1 line-clamp-3">
+                    <p className="text-[#8A7E5E] text-xs font-lora leading-relaxed mb-3 flex-1 line-clamp-2">
                       {book.description}
                     </p>
 
-                    <div className="flex flex-wrap gap-1.5 mb-5">
+                    <div className="flex flex-wrap gap-1 mb-4">
                       {book.themes.slice(0, 2).map((theme, i) => (
                         <span
                           key={i}
-                          className="px-2.5 py-1 bg-[#090A0F] text-[#C89B3C]/60 text-[9px] font-cinzel font-bold tracking-wider uppercase border border-[#C89B3C]/10 rounded-full"
+                          className="px-2 py-0.5 bg-[#090A0F] text-[#C89B3C]/60 text-[8px] font-cinzel font-bold tracking-wider uppercase border border-[#C89B3C]/10 rounded-full"
                         >
                           {theme}
                         </span>
                       ))}
                     </div>
 
-                    <button className="w-full py-3 border border-[#C89B3C]/20 text-[#C89B3C] font-cinzel font-bold text-xs tracking-wider uppercase hover:border-[#C89B3C] hover:bg-[#C89B3C]/5 transition-all duration-300 rounded-lg group/btn">
-                      <span className="flex items-center justify-center gap-2">
+                    <button className="w-full py-2.5 border border-[#C89B3C]/20 text-[#C89B3C] font-cinzel font-bold text-[10px] tracking-wider uppercase hover:border-[#C89B3C] hover:bg-[#C89B3C]/5 transition-all duration-300 rounded-lg group/btn">
+                      <span className="flex items-center justify-center gap-1.5">
                         Discover
                         <svg
                           className="w-3 h-3 group-hover/btn:translate-x-1 transition-transform"
