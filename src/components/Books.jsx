@@ -73,7 +73,7 @@ export default function Books() {
                       <img
                         src={latestNovel.coverImage}
                         alt={latestNovel.title}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-contain p-1 bg-[#090A0F]"
                         onError={(e) => {
                           e.target.style.display = "none";
                           const fallback =
@@ -186,7 +186,7 @@ export default function Books() {
                       <img
                         src={book.coverImage}
                         alt={book.title}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-contain p-1 bg-[#090A0F]"
                         onError={(e) => {
                           e.target.style.display = "none";
                           const fallback =
@@ -302,7 +302,7 @@ export default function Books() {
                     <img
                       src={selectedBook.coverImage}
                       alt={selectedBook.title}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain p-1 bg-[#090A0F]"
                       onError={(e) => {
                         e.target.style.display = "none";
                         const fallback =
